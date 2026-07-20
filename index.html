@@ -2,20 +2,43 @@
   <head>
     <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline' 'unsafe-eval' *.contentsquare.net app.contentsquare.com; child-src blob:; worker-src blob:; img-src *.contentsquare.net; connect-src *.contentsquare.net *.contentsquare.com;" />
     <script src="https://t.contentsquare.net/uxa/3dc32f71f8902.js"></script>
+    <script>
+      function testMasking() {
+        document.querySelector('#mms-notification-modal-portal').innerHTML='<li><div data-test="snackbar"><div><div></div><div><p title="Test Masking">Test masking</p></div><button></button></div></div></li>'
+      }
+    </script>
   </head>
   <body data-cs-capture>
     <input id=":rc1p:" type="text"></input>
-    <br/>
+    <br />
     <div>Number: 18</div>
-    <br/>
+    <br />
     <div>This is text</div>
     <ul>
-      <li data-cs-override-id="menu-l1-women-outerwear"><button><span>W Outerwear</span></button></li>
-      <li data-cs-override-id="menu-l1-men-outerwear">  <button><span>M Outerwear</span></button></li>
+      <li data-cs-override-id="menu-l1-women-outerwear">
+        <button onClick="testMasking()">
+          <span>Test Masking</span>
+        </button>
+      </li>
+      <li data-cs-override-id="menu-l1-men-outerwear">
+        <button>
+          <span>M Outerwear</span>
+        </button>
+      </li>
     </ul>
     <ul id=":rc2p:">
-      <li data-cs-override-id="menu-l1-women-outerwear2"><button><span>W Outerwear 2</span></button></li>
-      <li data-cs-override-id="menu-l1-men-outerwear2">  <button><span>M Outerwear 2</span></button></li>
+      <li data-cs-override-id="menu-l1-women-outerwear2">
+        <button>
+          <span>W Outerwear 2</span>
+        </button>
+      </li>
+      <li data-cs-override-id="menu-l1-men-outerwear2">
+        <button>
+          <span>M Outerwear 2</span>
+        </button>
+      </li>
+    </ul>
+    <ul id="mms-notification-modal-portal">
     </ul>
   </body>
 </html>
